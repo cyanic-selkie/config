@@ -1,0 +1,18 @@
+font=Noto Sans 10
+border-size=0
+padding=12
+
+[urgency=low]
+background-color=#e3a84e
+text-color=#282828
+default-timeout=0
+
+[urgency=normal]
+background-color=#7daea3
+text-color=#282828
+default-timeout=0
+
+[urgency=high]
+background-color=#ea6962
+text-color=#282828
+default-timeout=0

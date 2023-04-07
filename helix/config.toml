@@ -1,0 +1,19 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+mouse = false
+completion-trigger-len = 1
+cursorline = true
+color-modes = true
+lsp.display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = ["spinner", "spacer", "mode", "spacer", "version-control", "file-name", "file-modification-indicator"]
+right = ["diagnostics", "workspace-diagnostics", "position", "total-line-numbers", "file-encoding", "file-line-ending", "file-type"]
+
+[editor.indent-guides]
+render = true

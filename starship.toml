@@ -1,0 +1,8 @@
+[memory_usage]
+disabled = false
+threshold = 75
+
+[time]
+disabled = false
+format = '[\[$time\]]($style) '
+time_format = "%R"

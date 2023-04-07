@@ -1,0 +1,5 @@
+set recolor
+set recolor-lightcolor \#222222
+set recolor-darkcolor \#DEDEDE
+set recolor-keephue
+set selection-clipboard clipboard
