@@ -542,7 +542,7 @@ let-env config = {
       mode: [emacs, vi_normal, vi_insert]
       event: {
        send: executehostcommand,
-       cmd: "cd (ls ** | where type == dir | each { |it| $it.name} | str collect (char nl) | fzf | decode utf-8 | str trim)"}
+       cmd: "cd (ls ** | where type == dir | each { |it| $it.name} | str join (char nl) | fzf | decode utf-8 | str trim)"}
     }
     {
       name: fzf_edit_file
@@ -551,7 +551,7 @@ let-env config = {
       mode: [emacs, vi_normal, vi_insert]
       event: {
        send: executehostcommand,
-       cmd: "hx (ls **/* | where type == file | each { |it| $it.name} | str collect (char nl) | fzf | decode utf-8 | str trim)"}
+       cmd: "hx (ls **/* | where type == file | each { |it| $it.name} | str join (char nl) | fzf | decode utf-8 | str trim)"}
     }
   ]
 }
