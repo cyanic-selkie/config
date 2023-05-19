@@ -24,7 +24,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start bemenu (a program launcher)
-bindsym $mod+d exec "bemenu-run --fn 'Noto Sans:pixelsize=15' --nb '#101010' --hb '#383838' --nf '#f5f5f5' --hf '#f5f5f5' --tf '#f5f5f5' --prompt 'exec' -i -m 1 -l 10"
+bindsym $mod+d exec "bemenu-run --fn 'Noto Sans:pixelsize=15' --nb '#101010' --hb '#383838' --nf '#f5f5f5' --hf '#f5f5f5' --tf '#f5f5f5' --prompt 'exec' -i -m -1 -l 10"
 
 # change focus
 bindsym $mod+h focus left
