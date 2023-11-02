@@ -179,7 +179,7 @@ let light_theme = {
 
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   # true or false to enable or disable the welcome banner at startup
   show_banner: false
   ls: {
@@ -190,7 +190,7 @@ let-env config = {
     always_trash: false # always act as if -t was given. Can be overridden with -p
   }
   cd: {
-    abbreviations: false # allows `cd s/o/f` to expand to `cd some/other/folder`
+    # abbreviations: false # allows `cd s/o/f` to expand to `cd some/other/folder`
   }
   table: {
     mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
@@ -558,35 +558,37 @@ let-env config = {
 
 ssh-agent -c | lines | first 2 | parse "setenv {name} {value};" | reduce -f {} { |it, acc| $acc | upsert $it.name $it.value } | load-env
 
-let-env PATH = ($env.PATH | append '~/.cargo/bin')
+$env.PATH = ($env.PATH | append '~/.cargo/bin')
 
-let-env MOZ_ENABLE_WAYLAND = 1
+$env.MOZ_ENABLE_WAYLAND = 1
 
-let-env MANPAGER = "sh -c 'col -bx | bat -l man -p'"
+$env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
 
-let-env EDITOR = 'hx'
-let-env VISUAL = 'hx'
-let-env LANG = 'en_US.UTF-8'
+$env.EDITOR = 'hx'
+$env.VISUAL = 'hx'
+$env.LANG = 'en_US.UTF-8'
 
-let-env CC = '/usr/bin/clang'
-let-env CXX = '/usr/bin/clang++'
+$env.CC = '/usr/bin/clang'
+$env.CXX = '/usr/bin/clang++'
 
-let-env XDG_DATA_HOME = $'($env.HOME)/.local/share'
-let-env XDG_CONFIG_HOME = $'($env.HOME)/.config'
-let-env XDG_STATE_HOME = $'($env.HOME)/.local/state'
-let-env XDG_CACHE_HOME = $'($env.HOME)/.cache'
+$env.XDG_DATA_HOME = $'($env.HOME)/.local/share'
+$env.XDG_CONFIG_HOME = $'($env.HOME)/.config'
+$env.XDG_STATE_HOME = $'($env.HOME)/.local/state'
+$env.XDG_CACHE_HOME = $'($env.HOME)/.cache'
 
-let-env ANDROID_HOME = $'($env.XDG_DATA_HOME)/android'
-let-env HISTFILE = $'($env.XDG_STATE_HOME)/bash/history'
-let-env GNUPGHOME = $'($env.XDG_DATA_HOME)/gnupg'
-let-env IPYTHONDIR = $'($env.XDG_CONFIG_HOME)/ipython'
-let-env PARALLEL_HOME = $'($env.XDG_CONFIG_HOME)/parallel'
-let-env RUSTUP_HOME = $'($env.XDG_DATA_HOME)/rustup'
-let-env TEXMFVAR = $'($env.XDG_CACHE_HOME)/texlive/texmf-var'
-let-env NPM_CONFIG_USERCONFIG = $'($env.XDG_CONFIG_HOME)/npm/npmrc'
-let-env DOCKER_CONFIG = $'($env.XDG_CONFIG_HOME)/docker'
-let-env PYTHONSTARTUP = "/etc/python/pythonrc"
-let-env TIMEWARRIORDB = $'($env.XDG_DATA_HOME)/timewarrior'
+$env.ANDROID_HOME = $'($env.XDG_DATA_HOME)/android'
+$env.HISTFILE = $'($env.XDG_STATE_HOME)/bash/history'
+$env.GNUPGHOME = $'($env.XDG_DATA_HOME)/gnupg'
+$env.IPYTHONDIR = $'($env.XDG_CONFIG_HOME)/ipython'
+$env.PARALLEL_HOME = $'($env.XDG_CONFIG_HOME)/parallel'
+$env.RUSTUP_HOME = $'($env.XDG_DATA_HOME)/rustup'
+$env.TEXMFVAR = $'($env.XDG_CACHE_HOME)/texlive/texmf-var'
+$env.NPM_CONFIG_USERCONFIG = $'($env.XDG_CONFIG_HOME)/npm/npmrc'
+$env.DOCKER_CONFIG = $'($env.XDG_CONFIG_HOME)/docker'
+$env.PYTHONSTARTUP = "/etc/python/pythonrc"
+$env.TIMEWARRIORDB = $'($env.XDG_DATA_HOME)/timewarrior'
+
+$env.DOCKER_HOST = 'unix:///var/run/docker.sock'
 
 alias ll = ls -a
 

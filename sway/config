@@ -150,7 +150,7 @@ gaps outer 0
 
 # set default layouts and the hotkey for switching between them
 input type:keyboard {
-    xkb_layout us,hr,dvorak
+    xkb_layout us,hr
     xkb_options "caps:swapescape,grp:win_space_toggle"
     repeat_delay 200
     repeat_rate 30
@@ -160,10 +160,16 @@ input type:mouse {
     pointer_accel -1
 }
 
-output HDMI-A-1 transform 90 scale 2
+set $screenpad HDMI-A-1
+output $screenpad transform 90 scale 2
+output $screenpad disable
 input "10182:500:GDX1515:00_27C6:01F4_Touchpad" tap enable
 
-focus output eDP-1
+set $laptop eDP-1
+bindswitch --locked lid:on output $laptop disable
+bindswitch --locked lid:off output $laptop enable
+
+focus output $laptop
 
 # layout
 #for_window [class=".*"] split toggle

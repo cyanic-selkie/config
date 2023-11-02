@@ -7,7 +7,7 @@ window:
 font:
   normal:
     family: Fira Code
-  size: 13
+  size: 10
 
 import:
   - ~/.config/alacritty/themes/gruvbox_dark_hard.yaml 
